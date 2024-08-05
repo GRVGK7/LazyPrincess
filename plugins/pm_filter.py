@@ -401,11 +401,6 @@ async def next_page(bot, query):
     btn.insert(0, [
             InlineKeyboardButton("♨️ ꜱᴇɴᴅ ᴀʟʟ ꜰɪʟᴇꜱ ♨️", callback_data=f"sendfiles#{key}")
         ])
-    btn.insert(0,
-        [ 
-	    InlineKeyboardButton(text="⚡ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ⚡", url='https://telegram.me/real_MoviesAdda3'),
-        ] 
-    )
     if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
@@ -721,11 +716,6 @@ async def filter_qualities_cb_handler(client: Client, query: CallbackQuery):
         btn.insert(0, [
             InlineKeyboardButton("♨️ ꜱᴇɴᴅ ᴀʟʟ ꜰɪʟᴇꜱ ♨️", callback_data=f"sendfiles#{key}")
         ])
-        btn.insert(0,
-            [ 
-            InlineKeyboardButton(text="⚡ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ⚡", url='https://telegram.me/real_MoviesAdda3'),
-            ] 
-        )
 
         if offset != "":
             print(f"offset => {offset}")
@@ -1034,11 +1024,6 @@ async def filter_seasons_cb_handler(client: Client, query: CallbackQuery):
         btn.insert(0, [
             InlineKeyboardButton("♨️ ꜱᴇɴᴅ ᴀʟʟ ꜰɪʟᴇꜱ ♨️", callback_data=f"sendfiles#{key}")
         ])
-        btn.insert(0,
-        [ 
-	    InlineKeyboardButton(text="⚡ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ⚡", url='https://telegram.me/real_MoviesAdda3'),
-        ] 
-    )
 
         offset=0
         total_results = len(files)
@@ -1319,11 +1304,6 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
         btn.insert(0, [
             InlineKeyboardButton("♨️ ꜱᴇɴᴅ ᴀʟʟ ꜰɪʟᴇꜱ ♨️", callback_data=f"sendfiles#{key}")
         ])
-        btn.insert(0,
-        [ 
-	    InlineKeyboardButton(text="⚡ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ⚡", url='https://telegram.me/real_MoviesAdda3'),
-        ])
-
         if offset != "":
             print(f"offset => {offset}")
             btn.append(
@@ -1365,20 +1345,20 @@ async def cb_handler(client: Client, query: CallbackQuery):
                     title = chat.title
                 except:
                     await query.message.edit_text("Make sure I'm present in your group!!", quote=True)
-                    return await query.answer('♥️ Love @LazyDeveloper ♥️')
+                    return await query.answer('♥️ Love ɢʀᴠ ♥️')
             else:
                 await query.message.edit_text(
                     "I'm not connected to any groups!\nCheck /connections or connect to any groups",
                     quote=True
                 )
-                return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+                return await query.answer('♥️ Thank You ɢʀᴠ ♥️')
 
         elif chat_type in [enums.ChatType.GROUP, enums.ChatType.SUPERGROUP]:
             grp_id = query.message.chat.id
             title = query.message.chat.title
 
         else:
-            return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+            return await query.answer('♥️ Thank You ɢʀᴠ ♥️')
 
         st = await client.get_chat_member(grp_id, userid)
         if (st.status == enums.ChatMemberStatus.OWNER) or (str(userid) in ADMINS):
@@ -1442,7 +1422,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             reply_markup=keyboard,
             parse_mode=enums.ParseMode.MARKDOWN
         )
-        return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+        return await query.answer('♥️ Thank You ɢʀᴠ ♥️')
     elif "connectcb" in query.data:
         await query.answer()
 
@@ -1463,7 +1443,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             )
         else:
             await query.message.edit_text('Some error occurred!!', parse_mode=enums.ParseMode.MARKDOWN)
-        return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+        return await query.answer('♥️ Thank You ɢʀᴠ ♥️')
     elif "disconnect" in query.data:
         await query.answer()
 
@@ -1486,7 +1466,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+        return await query.answer('♥️ Thank You ɢʀᴠ ♥️')
     elif "deletecb" in query.data:
         await query.answer()
 
@@ -1504,7 +1484,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 f"Some error occurred!!",
                 parse_mode=enums.ParseMode.MARKDOWN
             )
-        return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+        return await query.answer('♥️ Thank You ɢʀᴠ ♥️')
     elif query.data == "backcb":
         await query.answer()
 
@@ -1515,7 +1495,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             await query.message.edit_text(
                 "There are no active connections!! Connect to some groups first.",
             )
-            return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+            return await query.answer('♥️ Thank You ɢʀᴠ ♥️')
         buttons = []
         for groupid in groupids:
             try:
@@ -1667,22 +1647,14 @@ async def cb_handler(client: Client, query: CallbackQuery):
         ],[
             InlineKeyboardButton('⚙ Sᴇᴛᴛɪɴɢs', callback_data='openSettings'),
             InlineKeyboardButton('♥️ Aʙᴏᴜᴛ', callback_data='about')
-        ],[
-            InlineKeyboardButton('⪦ 𝕄𝕆𝕍𝕀𝔼 ℂℍ𝔸ℕℕ𝔼𝕃 ⪧', url='https://t.me/real_MoviesAdda3')
-        ],[
-            InlineKeyboardButton('💸 E𝐚𝐫𝐧 M𝐨𝐧𝐞𝐲 💸', callback_data="shortlink_info")
-        ],[
-                InlineKeyboardButton(
-                    "🦋 SUBSCRIBE YT Channel 🦋", url='https://youtube.com/@LazyDeveloperr'
-                )
-            ]]
+        ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
             text=script.START_TXT.format(query.from_user.mention, temp.U_NAME, temp.B_NAME),
             reply_markup=reply_markup,
             parse_mode=enums.ParseMode.HTML
         )
-        await query.answer('♥️ Thank You LazyDeveloper ♥️')
+        await query.answer('♥️ Thank You ɢʀᴠ ♥️')
     elif query.data == "help":
         buttons = [[
             InlineKeyboardButton('Manual Filter', callback_data='manuelfilter'),
@@ -1805,7 +1777,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('♥️ Aʙᴏᴜᴛ', callback_data='about')
             ],[
             InlineKeyboardButton('Open settings', callback_data='openSettings'),
-            InlineKeyboardButton('💤Developer', url='https://telegram.me/LazyDeveloper')
+            InlineKeyboardButton('💤Developer', url='https://t.me/GRVGK7')
             ],[
             InlineKeyboardButton('🔐 Close', callback_data='close_data')
             ]]
@@ -1822,7 +1794,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         await OpenSettings(query.message)
 
     elif query.data == "triggerUploadMode":
-        await query.answer("Thank You LazyDeveloper")
+        await query.answer("Thank You ɢʀᴠ")
         upload_as_doc = await db.get_upload_as_doc(query.from_user.id)
         if upload_as_doc:
             await db.set_upload_as_doc(query.from_user.id, False)
@@ -1909,7 +1881,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Sᴇᴀʀᴄʜ 🇭​​​​​🇪​​​​​🇷​​​​​🇪​​​​​ 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://t.me/ams7group")
             ]]
             btn_lzdv = [
                 [
@@ -1934,7 +1906,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Sᴇᴀʀᴄʜ 🇭​​​​​🇪​​​​​🇷​​​​​🇪​​​​​ 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://t.me/ams7group")
             ]]
             btn_lzdv = [
                 [
@@ -1959,7 +1931,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Sᴇᴀʀᴄʜ 🇭​​​​​🇪​​​​​🇷​​​​​🇪​​​​​ 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://t.me/ams7group")
             ]]
             btn_lzdv = [
                 [
@@ -1984,7 +1956,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Sᴇᴀʀᴄʜ 🇭​​​​​🇪​​​​​🇷​​​​​🇪​​​​​ 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://t.me/ams7group")
             ]]
             btn_lzdv = [
                 [
@@ -2009,7 +1981,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Sᴇᴀʀᴄʜ 🇭​​​​​🇪​​​​​🇷​​​​​🇪​​​​​ 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://t.me/ams7group")
             ]]
             btn_lzdv = [
                 [
@@ -2034,7 +2006,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"🔍 Sᴇᴀʀᴄʜ 🇭​​​​​🇪​​​​​🇷​​​​​🇪​​​​​ 🔎", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://t.me/ams7group")
             ]]
             btn_lzdv = [
                 [
@@ -2059,7 +2031,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             btn = [[
                 InlineKeyboardButton(text=f"💛 Request More 💛", url=f"https://telegram.me/{MOVIE_GROUP_USERNAME}")
             ],[
-                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://telegram.me/LazyDeveloperSupport")
+                InlineKeyboardButton(text=f"🐞 ══• ʀᴇᴘᴏʀᴛ ɪꜱꜱᴜᴇ •══ 🐞", url=f"https://t.me/ams7group")
             ]]
             btn_lzdv = [
                         [InlineKeyboardButton(text=f"♻ ̶R̶e̶q̶u̶e̶s̶t̶ ̶R̶e̶c̶i̶e̶v̶e̶d ♻", callback_data=f"notify_user_req_rcvd:{user_id}:{movie}")],
@@ -2342,7 +2314,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
         if str(grp_id) != str(grpid):
             await query.message.edit("Your Active Connection Has Been Changed. Go To /settings.")
-            return await query.answer('♥️ Thank You LazyDeveloper ♥️')
+            return await query.answer('♥️ Thank You ɢʀᴠ ♥️')
         
         if set_type == 'url_mode' and query.from_user.id not in ADMINS:
             return await query.answer(text=f"Hey {query.from_user.first_name}, You can't change shortlink settings for your group !\n\nIt's an admin only setting !", show_alert=True)
@@ -2399,7 +2371,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
 
             reply_markup = InlineKeyboardMarkup(buttons)
             await query.message.edit_reply_markup(reply_markup)
-    await query.answer('♥️ Thank You LazyDeveloper ♥️')
+    await query.answer('♥️ Thank You ɢʀᴠ ♥️')
 
 
 async def auto_filter(client, msg, spoll=False):
@@ -2634,10 +2606,6 @@ async def auto_filter(client, msg, spoll=False):
     btn.insert(0, [
         InlineKeyboardButton("♨️ ꜱᴇɴᴅ ᴀʟʟ ꜰɪʟᴇꜱ ♨️", callback_data=f"sendfiles#{key}")
     ])
-    btn.insert(0,
-    [ 
-    InlineKeyboardButton(text="⚡ ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ⚡", url='https://telegram.me/real_MoviesAdda3'),
-    ])
 
     if offset != "":
         key = f"{message.chat.id}-{message.id}"
@@ -2700,7 +2668,7 @@ async def auto_filter(client, msg, spoll=False):
         try:
             z = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024],
                                         reply_markup=InlineKeyboardMarkup(btn))
-            thanksaa = await message.reply_text(f"♥ Heads up for **<a href='https://t.me/LazyDeveloperr'>𓆩• LazyDeveloper •𓆪</a>**...\n<code>🎉 we love you 🎊</code>")
+            thanksaa = await message.reply_text(f"♥ Heads up for **<a href='https://t.me/GRVGK7'>𓆩• ɢʀᴠ •𓆪</a>**...\n<code>🎉 we love you 🎊</code>")
             await asyncio.sleep(5)
             await thanksaa.delete()
             if SELF_DELETE:
@@ -2711,7 +2679,7 @@ async def auto_filter(client, msg, spoll=False):
             poster = pic.replace('.jpg', "._V1_UX360.jpg")
 
             m = await message.reply_photo(photo=poster, caption=cap[:1024], reply_markup=InlineKeyboardMarkup(btn))
-            thanks = await message.reply_text(f"♥ Heads up for **<a href='https://t.me/LazyDeveloperr'>𓆩• LazyDeveloper •𓆪</a>**...\n<code>🎉 we love you 🎊</code>")
+            thanks = await message.reply_text(f"♥ Heads up for **<a href='https://t.me/GRVGK7'>𓆩• ɢʀᴠ •𓆪</a>**...\n<code>🎉 we love you 🎊</code>")
             await asyncio.sleep(5)
             await thanks.delete()
             if SELF_DELETE:
@@ -2721,7 +2689,7 @@ async def auto_filter(client, msg, spoll=False):
         except Exception as e:
             logger.exception(e)
             n = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-            thanksz = await message.reply_text(f"♥ Heads up for **<a href='https://t.me/LazyDeveloperr'>𓆩• LazyDeveloper •𓆪</a>**...\n<code>🎉 we love you 🎊</code>")
+            thanksz = await message.reply_text(f"♥ Heads up for **<a href='https://t.me/GRVGK7'>𓆩• ɢʀᴠ •𓆪</a>**...\n<code>🎉 we love you 🎊</code>")
             await asyncio.sleep(5)
             await thanksz.delete()
             if SELF_DELETE:
@@ -2729,7 +2697,7 @@ async def auto_filter(client, msg, spoll=False):
                 await n.delete()         
     else:
         p = await message.reply_text(cap, reply_markup=InlineKeyboardMarkup(btn))
-        thanksx = await message.reply_text(f"♥ Heads up for **<a href='https://t.me/LazyDeveloperr'>𓆩• LazyDeveloper •𓆪</a>**...\n<code>🎉 we love you 🎊</code>")
+        thanksx = await message.reply_text(f"♥ Heads up for **<a href='https://t.me/GRVGK7'>𓆩• ɢʀᴠ •𓆪</a>**...\n<code>🎉 we love you 🎊</code>")
         await asyncio.sleep(5)
         await thanksx.delete()
         await asyncio.sleep(250)
